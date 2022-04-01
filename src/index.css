@@ -17,5 +17,5 @@ code {
     border-radius: 5px;
     border: 1px solid #24ADF3;
     color: #fff;
-    cursor: pointer;
+    cursor: not-allowed;
 }
