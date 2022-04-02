@@ -10,7 +10,15 @@ interface MenuProps {
 }
 
 export const Menu = ({ closeMenu }: MenuProps) => {
-    const { theme } = useContext(ThemeContext);
+    const { theme, setTheme } = useContext(ThemeContext);
+    function activeLightMode() {
+        setTheme("light");
+        window.localStorage.setItem("theme", "light");
+    }
+    function activeDarkMode() {
+        setTheme("dark");
+        window.localStorage.setItem("theme", "dark");
+    }
     return (
         <section
             className={styles.menuContainer}
@@ -35,13 +43,15 @@ export const Menu = ({ closeMenu }: MenuProps) => {
                     className={styles.menuFooter}
                 >
                     <button
-                        className={theme === "light"? styles.menuThemeButton: styles.menuThemeButton + " " + styles.menuDarkButton}
+                        onClick={activeDarkMode}
+                        className={theme === "light" ? styles.menuThemeButton : styles.menuThemeButton + " " + styles.menuDarkButton}
                     >
                         Dark Mode
                     </button>
                     <button
-                        className={theme === "light"? styles.menuThemeButton: styles.menuThemeButton + " " + styles.menuDarkButton}
-                        >
+                        onClick={activeLightMode}
+                        className={theme === "light" ? styles.menuThemeButton : styles.menuThemeButton + " " + styles.menuDarkButton}
+                    >
                         Light Mode
                     </button>
                 </footer>

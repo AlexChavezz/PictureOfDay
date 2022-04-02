@@ -114,6 +114,7 @@ img {
 }
 
 .dark {
+    /* transition: background 200ms ease-in; */
     background-color: #202020;
     color: #fff;
 }
