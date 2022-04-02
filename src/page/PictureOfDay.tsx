@@ -1,6 +1,6 @@
-import { Fragment, useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import moment from 'moment';
-import { Themes, Data } from '../interfaces';
+import { Data } from '../interfaces';
 import { getPictureFromDate } from '../helpers/getPictureFromDate';
 import { Header } from '../components/Header';
 import { Container } from '../components/Container';
@@ -28,12 +28,12 @@ export const PictureOfDay = () => {
     setCurrentDate(moment(currentDate).add(1, 'day').format());
   }
   //  -> Function to open menu
-  function openMenu(){
-    setMenu( true );
+  function openMenu() {
+    setMenu(true);
   }
   //  -> function to close menu
-  const handleCloseMenu = () => {
-    setMenu( false);
+  const closeMenu = () => {
+      setMenu(false);
   }
   console.log(theme)
   if (!currentData) {
@@ -45,7 +45,7 @@ export const PictureOfDay = () => {
     >
       <Header
         currentDate={currentDate}
-        handleCloseMenu={handleCloseMenu}
+        closeMenu={closeMenu}
         openMenu={openMenu}
       />
       <Container>
@@ -78,8 +78,8 @@ export const PictureOfDay = () => {
 
       {
         menu &&
-        <Menu 
-        handleCloseMenu={handleCloseMenu}
+        <Menu
+          closeMenu={closeMenu}
         />
       }
     </div>

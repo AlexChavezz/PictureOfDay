@@ -7,7 +7,6 @@ import { PictureOfDay } from './page/PictureOfDay';
 const App = () => {
 
   useEffect(() => {
-    // window.localStorage.getItem("theme") ? window.localStorage.setItem("theme", "light") : setTheme("")
     let theme = window.localStorage.getItem("theme");
     if (theme == "light" || theme === "dark") {
       setTheme(theme);

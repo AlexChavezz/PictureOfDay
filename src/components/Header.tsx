@@ -7,8 +7,8 @@ import { useContext } from 'react';
 
 interface HeaderProps {
     currentDate: string,
-    handleCloseMenu: () => void,
-    openMenu: () => void 
+    closeMenu: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void,
+    openMenu: (e:any) => void 
 }
 
 export const Header = ({ currentDate, openMenu }: HeaderProps) => {
