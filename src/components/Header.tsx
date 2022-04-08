@@ -1,20 +1,19 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 import moment from 'moment';
 import styles from '../styles/lightStyles.module.css';
 import handleBlackImage from '../assets/drag_handle_black_24dp.svg';
 import handleWhiteImage from '../assets/drag_handle_white_24dp.svg';
-import { ThemeContext } from '../context/ThemeContext';
-import { useContext } from 'react';
 
 interface HeaderProps {
-    currentDate: string,
+    currentDate?: string,
     closeMenu: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void,
     openMenu: (e:any) => void 
 }
 
-export const Header = ({ currentDate, openMenu }: HeaderProps) => {
+export const Header = ({ openMenu, currentDate }: HeaderProps) => {
 
     const { theme } = useContext(ThemeContext);
-
     return (
         <header
             className={theme === "light" ? styles.head : styles.head + " " + styles.dark}

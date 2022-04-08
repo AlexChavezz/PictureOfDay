@@ -8,7 +8,7 @@
 }
 
 .head {
-    align-items: flex-end;
+    align-items: center;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -17,6 +17,8 @@
 img {
     height: 600px;
     border-radius: 10px;
+    display: block;
+    margin: 0px auto;
 }
 
 .btnContainer {
@@ -38,7 +40,6 @@ img {
 }
 
 .mainInfo {
-    display: flex;
     align-items: center;
     height: 90%;
 }
@@ -48,13 +49,8 @@ img {
 }
 
 .description {
-    /* display: flex;
-    flex-direction: column; */
     margin-left: 20px;
 }
-
-
-/* .title {} */
 
 .explanation {
     font-size: 15px;
@@ -111,6 +107,25 @@ img {
     background-color: #fff;
     height: 100vh;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menuHeader {
+    align-self: center;
+    background-color: #cff4fc;
+    border-color: #b6effb;
+    border-radius: 5px;
+    color: #055160;
+    margin: 100px 0px 0px 0px;
+    font-size: .9rem;
+    padding: 20px;
+    width: 80%;
+}
+
+.menuFooter {
+    margin-bottom: 50px;
 }
 
 .dark {
@@ -143,4 +158,21 @@ img {
 
 .menuThemeButton:active {
     transform: scale(.7);
+}
+
+.textField {
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #24ADF3;
+    width: 60px;
+    margin: 10px;
+}
+
+.menuMainContent {
+    padding: 20px;
+}
+
+.menuMainContentForm {
+    margin: 20px 0px;
 }

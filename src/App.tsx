@@ -16,7 +16,6 @@ const App = () => {
   }, [])
 
   const [theme, setTheme] = useState<Themes>("light");
-  console.log(theme);
   return (
     <ThemeContext.Provider value={{
       theme,
