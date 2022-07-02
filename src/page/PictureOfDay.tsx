@@ -16,14 +16,33 @@ export const PictureOfDay = () => {
   function hiddeMenu(){
       setMenu(false);
   }
+  const ref = useRef<HTMLElement>(null);
   function showMenu(){
     setMenu(true);
+    if( ref.current ){
+      console.log("existe")
+      ref.current.style.visibility = "hidden"
+      // ref.current?.animate([
+      //   {opcacity: "0"},
+      //   {visivility:"visible"},
+      //   {transform: 'translateX(100%)'},
+      //   {transform: 'translateX(0%)'},
+      //   {opcacity: "1"},
+
+      // ], {
+      //   duration: 10000,
+      // })
+
+    }else{
+      console.log("No existe")
+    }
   }
   const dateRef = useRef(currentDate);
 
   useEffect(() => {
     getPictureFromDate(currentDate).then(response => setCurrentData(response));
   }, [currentDate, setCurrentDate])
+
 
   if (!currentData) {
     return <>Loading</>
@@ -58,6 +77,7 @@ export const PictureOfDay = () => {
         <Menu
         hiddeMenu={hiddeMenu}
         setCurrentDate={setCurrentDate}
+        reference={ref}
         />
       }
     </div>

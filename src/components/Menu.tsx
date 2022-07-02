@@ -9,9 +9,10 @@ import { Form } from './Form';
 interface MenuProps {
     hiddeMenu: () => void,
     setCurrentDate: React.Dispatch<React.SetStateAction<string>>
+    reference: React.RefObject<HTMLElement>
 }
 
-export const Menu = ({ hiddeMenu, setCurrentDate }: MenuProps) => {
+export const Menu = ({ hiddeMenu, setCurrentDate, reference }: MenuProps) => {
     const [theme, activeDarkMode, activeLightMode] = useTheme();
     // function onSubmit(e: React.FormEvent) {
     //     e.preventDefault();
@@ -19,6 +20,7 @@ export const Menu = ({ hiddeMenu, setCurrentDate }: MenuProps) => {
     // }
     return (
         <section
+        ref={reference}
             className={styles.menuContainer}
         >
             <article
@@ -43,11 +45,11 @@ export const Menu = ({ hiddeMenu, setCurrentDate }: MenuProps) => {
                     <article
                         className={styles.menuMainContent}
                     >
-                        Do you want search for specific date?
+                        {/* Do you want search for specific date?
                         <Form
                             inputClassName={styles.textField}
                             setCurrentDate={setCurrentDate}
-                        />
+                        /> */}
                     </article>
                 </section>
                 <footer
