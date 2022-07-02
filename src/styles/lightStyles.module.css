@@ -124,10 +124,6 @@ img {
     width: 80%;
 }
 
-.menuFooter {
-    margin-bottom: 50px;
-}
-
 .dark {
     /* transition: background 200ms ease-in; */
     background-color: #202020;
@@ -136,7 +132,9 @@ img {
 
 .menuFooter {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .menuThemeButton {
@@ -146,8 +144,11 @@ img {
     cursor: pointer;
     transition: transform 200ms ease;
     height: 25px;
+    margin:20px;
 }
-
+.textAuthor {
+    font-size: 15px;
+}
 .menuDarkButton {
     color: #fff;
 }

@@ -7,12 +7,10 @@ import handleWhiteImage from '../assets/drag_handle_white_24dp.svg';
 
 interface HeaderProps {
     currentDate?: string,
-    closeMenu: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void,
-    openMenu: (e:any) => void 
+    showMenu: (e:any) => void 
 }
 
-export const Header = ({ openMenu, currentDate }: HeaderProps) => {
-
+export const Header = ({ currentDate, showMenu }: HeaderProps) => {
     const { theme } = useContext(ThemeContext);
     return (
         <header
@@ -26,8 +24,8 @@ export const Header = ({ openMenu, currentDate }: HeaderProps) => {
                     theme === "dark" &&
                     < img
                         className={styles.menuIcon}
-                        onClick={ openMenu }
-                        src={handleWhiteImage}
+                        onClick={ showMenu }
+                        src={ handleWhiteImage }
                         alt="menu"
                     />
                 }
@@ -35,7 +33,7 @@ export const Header = ({ openMenu, currentDate }: HeaderProps) => {
                     theme === "light" &&
                     < img
                         className={styles.menuIcon}
-                        onClick={ openMenu }
+                        onClick={ showMenu }
                         src={handleBlackImage}
                         alt="menu"
                     />

@@ -10,6 +10,22 @@ export interface Data {
 export type Themes = "dark" | "light";
 
 /*
+    FORM
+*/
+
+export interface FormProps {
+    inputClassName: string,
+    setCurrentDate: React.Dispatch<React.SetStateAction<string>>
+}
+
+export interface FormState {
+    year: string,
+    month: string,
+    day: string
+}
+
+
+/*
     -> Context
 */ 
 

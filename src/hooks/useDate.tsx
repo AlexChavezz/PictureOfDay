@@ -11,9 +11,6 @@ export const useDate = () => {
     function getAfter() {
         setCurrentDate(moment(currentDate).add(1, 'day').format());
     }
-
-
-
     return {
         currentDate, setCurrentDate, getBefore, getAfter,
     }

@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { getPictureFromDate } from '../helpers/getPictureFromDate';
 import { Header, Container, Button, Menu } from '../components';
 import { ThemeContext } from '../context/ThemeContext';
-import { useMenu } from '../hooks';
 import { Data } from '../interfaces';
 import { MainContent } from './MainContent';
 import styles from '../styles/lightStyles.module.css';
@@ -11,10 +10,15 @@ import { useDate } from '../hooks/useDate';
 export const PictureOfDay = () => {
 
   const { theme } = useContext(ThemeContext);
-  const [menu, openMenu, closeMenu] = useMenu();
+  const [menu, setMenu] = useState<boolean>(false);
   const [currentData, setCurrentData] = useState<Data | null>(null);
-  const { currentDate, getAfter, getBefore, setCurrentDate } = useDate();
-
+  const {currentDate, getAfter, getBefore, setCurrentDate } = useDate();
+  function hiddeMenu(){
+      setMenu(false);
+  }
+  function showMenu(){
+    setMenu(true);
+  }
   const dateRef = useRef(currentDate);
 
   useEffect(() => {
@@ -30,8 +34,7 @@ export const PictureOfDay = () => {
     >
       <Header
         currentDate={currentDate}
-        closeMenu={closeMenu}
-        openMenu={openMenu}
+        showMenu={showMenu}
       />
       <Container>
         <MainContent currentData={currentData} />
@@ -53,8 +56,8 @@ export const PictureOfDay = () => {
       {
         menu &&
         <Menu
-          closeMenu={closeMenu}
-          setCurrentDate={setCurrentDate}
+        hiddeMenu={hiddeMenu}
+        setCurrentDate={setCurrentDate}
         />
       }
     </div>
